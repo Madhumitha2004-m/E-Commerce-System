@@ -1,4 +1,4 @@
-Creater : Eswaramoorthy M 
+Creater : Madhumitha M 
 You can create a new file in your VS Code project folder named README.md and paste this content directly into it.
 Simple E-Commerce Store 🛒
 A full-stack e-commerce project built from scratch using Node.js, Express, and MySQL. This project features a complete customer-facing storefront and a secure admin panel for managing products, all built with EJS for server-side rendering.
@@ -116,5 +116,5 @@ Customer
  * Browse products, add them to your cart, and proceed through the full checkout flow!
 
  * Thankyou 😊
- * -Eswaramoorthy M
+ * -Madhumitha M
  *  
