@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<h1>Your Bill</h1>
+
+<div class="checkout-summary">
+    <h2>Order Summary</h2>
+    <% cartItems.forEach(item => { %>
+        <div class="checkout-item">
+            <span><%= item.name %> (x<%= item.quantity %>)</span>
+            <span>$<%= (item.price * item.quantity).toFixed(2) %></span>
+        </div>
+    <% }) %>
+    
+    <hr>
+    
+    <div class="checkout-total">
+        <p>
+            <strong>Subtotal:</strong>
+            <span>$<%= subtotal %></span>
+        </p>
+        <p>
+            <strong>Taxes (5%):</strong>
+            <span>$<%= tax %></span>
+        </p>
+        <hr>
+        <p class="final-total">
+            <strong>Final Total:</strong>
+            <span>$<%= finalTotal %></span>
+        </p>
+    </div>
+
+   <a href="/shipping-details" class="checkout-button">Enter Shipping Details</a>
+</div>
+
+<%- include('../partials/footer') %>

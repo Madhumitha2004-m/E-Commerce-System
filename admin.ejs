@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+<h1>Admin Panel</h1>
+
+<h2>Add New Product</h2>
+<form action="/admin/add-product" method="POST" class="form-container">
+    <div>
+        <label for="name">Product Name</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+    </div>
+    <div>
+        <label for="imageUrl">Image URL</label>
+        <input type="text" id="imageUrl" name="imageUrl" placeholder="https://example.com/image.png">
+    </div>
+    <button type="submit">Add Product</button>
+</form>
+
+<h2>Manage Products</h2>
+<div class="product-list-admin">
+    <% products.forEach(product => { %>
+        <div class="product-item">
+            <span><%= product.name %> ($<%= product.price %>)</span>
+            
+            <form action="/admin/delete-product" method="POST" style="display: inline-block;">
+                <input type="hidden" name="productId" value="<%= product.id %>">
+                <button type="submit" class="delete-button">Delete</button>
+            </form>
+            
+            <a href="/admin/edit-product/<%= product.id %>" class="edit-button">Edit</a>
+
+        </div>
+    <% }) %>
+</div>
+
+<%- include('../partials/footer') %>
